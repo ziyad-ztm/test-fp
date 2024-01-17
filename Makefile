@@ -16,11 +16,11 @@ fullmigrate: makemigrations migrate ;
 
 .PHONY: build
 build:
-	docker-compose -p fairpicture-website build -d
+	docker-compose -p fairpicture-website build
 
 .PHONY: up
 up:
-	docker-compose -p fairpicture-website up
+	docker-compose -p fairpicture-website up -d
 
 
 .PHONY: tw-install
