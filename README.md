@@ -15,12 +15,26 @@
     - Nodejs 20.x
     - Tailwind 3.x
 
-## Local setup
+## Prerequisites
   - Install [Nodejs 20.x](https://nodejs.org/en/download)
-  - ### Additional steps for Windows users
-    #### Command for installing Chocolatey (Powershell)
-        `Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))`
+  - Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
-    #### Command for installing "Make" command
-        `choco install make`
-  - Run `make setup`
+## Local setup
+  - ### Additional steps for Windows users only
+    - Command for installing Chocolatey (Powershell)
+        ```bash
+        Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+        ```
+
+    - Command for installing "Make" command
+        ```bash
+        choco install make
+        ```
+  - Command for setting up the project
+    ```bash
+    make setup
+    ```
+  - Command for applying migrations
+    ```bash
+    make migrate
+    ```

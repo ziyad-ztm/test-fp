@@ -16,7 +16,7 @@ fullmigrate: makemigrations migrate ;
 
 .PHONY: build
 build:
-	docker-compose -p fairpicture-website build
+	docker-compose -p fairpicture-website build -d
 
 .PHONY: up
 up:
@@ -37,4 +37,4 @@ tw-npm-start:
 
 
 .PHONY: setup
-setup: build up migrate npm-install
+setup: build up
