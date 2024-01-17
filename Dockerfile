@@ -18,9 +18,6 @@ RUN apt-get update && apt-get upgrade -y && \
 # Install node 20.x (LTS)
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && apt-get install -y nodejs
 
-# Install django-tailwind dependency
-RUN npm install cross-env
-
 # Install pipenv and pipfile dependencies
 RUN pip install --upgrade pip && pip install pipenv && pipenv install --system
 

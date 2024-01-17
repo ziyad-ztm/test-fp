@@ -14,22 +14,18 @@ createsuperuser:
 fullmigrate: makemigrations migrate ;
 
 
-.PHONY: build
-build:
+.PHONY: docker-c-build
+docker-c-build:
 	docker-compose -p fairpicture-website build
 
-.PHONY: up
-up:
+.PHONY: docker-c-up
+docker-c-up:
 	docker-compose -p fairpicture-website up -d
 
 
-.PHONY: tw-install
-tw-install:
+.PHONY: tailwind-install
+tailwind-install:
 	docker exec fairpicture-website-web-1 python manage.py tailwind install
-
-.PHONY: npm-install
-npm-install:
-	cd theme/static_src && npm install && cd ../..
 
 .PHONY: tw-npm-start
 tw-npm-start:
@@ -37,4 +33,4 @@ tw-npm-start:
 
 
 .PHONY: setup
-setup: build up
+setup: docker-c-build docker-c-up tailwind-install
