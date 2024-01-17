@@ -3,17 +3,17 @@
 ## Technology Stack
 
 ### Backend
-    - Python 3.12.x
-    - Pipenv
-    - Django 5.x
-    - PostgresSQL 16
-    - Wagtail 5.x
+  - Python 3.12.x
+  - Pipenv
+  - Django 5.x
+  - PostgresSQL 16
+  - Wagtail 5.x
 
 ### Frontend
-    - Django 5.x
-    - Django-tailwind
-      - Nodejs 20.x
-      - Tailwind 3.x
+  - Django 5.x
+  - Django-tailwind
+    - Nodejs 20.x
+    - Tailwind 3.x
 
 ## Local setup
   - Install [Nodejs 20.x](https://nodejs.org/en/download)
