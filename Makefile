@@ -14,9 +14,13 @@ createsuperuser:
 fullmigrate: makemigrations migrate ;
 
 
-.PHONY: compose
-compose:
-	docker-compose -p fairpicture-website up -d fairpicture-website --build
+.PHONY: build
+build:
+	docker-compose -p fairpicture-website build
+
+.PHONY: up
+up:
+	docker-compose -p fairpicture-website up
 
 
 .PHONY: tw-install
@@ -33,4 +37,4 @@ tw-npm-start:
 
 
 .PHONY: setup
-setup: compose migrate npm-install
+setup: build up migrate npm-install
