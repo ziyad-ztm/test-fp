@@ -10,6 +10,12 @@ migrate:
 createsuperuser:
 	docker exec fpwebsite-web-1 python manage.py createsuperuser 
 
+
+.PHONY: compose
+compose:
+	docker-compose up -d --build
+
+
 .PHONY: tw-install
 tw-install:
 	docker exec fpwebsite-web-1 python manage.py tailwind install
@@ -26,4 +32,4 @@ tw-npm-start:
 fullmigrate: makemigrations migrate ;
 
 .PHONY: setup
-setup: migrate npm-install
+setup: compose migrate npm-install
