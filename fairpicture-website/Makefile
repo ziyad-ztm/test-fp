@@ -1,14 +1,17 @@
 .PHONY: makemigrations
 makemigrations:
-	docker exec fpwebsite-web-1 python manage.py makemigrations
+	docker exec fairpicture-website-web-1 python manage.py makemigrations
 
 .PHONY: migrate
 migrate:
-	docker exec fpwebsite-web-1 python manage.py migrate
+	docker exec fairpicture-website-web-1 python manage.py migrate
 
 .PHONY: createsuperuser
 createsuperuser:
-	docker exec fpwebsite-web-1 python manage.py createsuperuser 
+	docker exec fairpicture-website-web-1 python manage.py createsuperuser 
+
+.PHONY: fullmigrate
+fullmigrate: makemigrations migrate ;
 
 
 .PHONY: compose
@@ -18,7 +21,7 @@ compose:
 
 .PHONY: tw-install
 tw-install:
-	docker exec fpwebsite-web-1 python manage.py tailwind install
+	docker exec fairpicture-website-web-1 python manage.py tailwind install
 
 .PHONY: npm-install
 npm-install:
@@ -28,8 +31,6 @@ npm-install:
 tw-npm-start:
 	cd theme/static_src && npm run start
 
-.PHONY: fullmigrate
-fullmigrate: makemigrations migrate ;
 
 .PHONY: setup
 setup: compose migrate npm-install

@@ -17,7 +17,6 @@
 
 ## Local setup
   - Install [Nodejs 20.x](https://nodejs.org/en/download)
-  - After cloning the repo, run `docker-compose up -d --build`
   - ### Additional steps for Windows users
     #### Command for installing Chocolatey (Powershell)
         `Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))`
