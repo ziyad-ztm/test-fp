@@ -27,10 +27,14 @@ docker-c-up:
 tailwind-install:
 	docker exec fairpicture-website-web-1 python manage.py tailwind install
 
+.PHONY: npm-install
+npm-install:
+	cd theme/static_src && npm install && cd ../..
+
 .PHONY: tw-npm-start
 tw-npm-start:
 	cd theme/static_src && npm run start
 
 
 .PHONY: setup
-setup: docker-c-build docker-c-up tailwind-install
+setup: docker-c-build docker-c-up tailwind-install npm-install
