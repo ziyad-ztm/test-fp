@@ -41,3 +41,9 @@
       ```bash
       make migrate
       ```
+
+## Tailwind
+ - To start tailwind watch:
+    ```bash
+    make tw-npm-start
+    ```
